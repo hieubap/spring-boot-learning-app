@@ -23,5 +23,7 @@ public class AccountDTO extends CoreDTO {
 
     private String avatar;
 
+    private String phone;
+
     private Short role;
 }

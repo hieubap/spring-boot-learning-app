@@ -24,7 +24,7 @@ public class ChapterEntity extends CoreEntity {
 
   private Long courseId;
 
-  private Long name;
+  private String name;
 
   // minute
   private Integer duration;

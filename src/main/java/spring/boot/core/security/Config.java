@@ -55,7 +55,7 @@ public class Config extends WebSecurityConfigurerAdapter {
                 .antMatchers(HttpMethod.PUT, unAuthorization).permitAll()
                 .antMatchers(HttpMethod.POST, unAuthorization).permitAll()
                 .antMatchers(HttpMethod.GET, unAuthorization).permitAll()
-                .anyRequest().permitAll();
+                .anyRequest().authenticated();
     }
 
     @Override
