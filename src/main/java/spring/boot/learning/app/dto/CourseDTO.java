@@ -10,18 +10,17 @@ import spring.boot.core.api.CoreDTO;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-public class AccountDTO extends CoreDTO {
-    private Long id;
+public class CourseDTO extends CoreDTO {
+  private Long id;
 
-    private String username;
+  private String name;
 
-    private String password;
+  private String author;
 
-    private String email;
+  // minute
+  private Integer duration;
 
-    private String fullName;
+  private Double price;
 
-    private String avatar;
-
-    private Short role;
+  private String imageUrl;
 }

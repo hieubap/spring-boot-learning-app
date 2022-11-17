@@ -12,29 +12,23 @@ import org.hibernate.annotations.Where;
 import spring.boot.core.api.CoreEntity;
 
 @Entity
-@Table(name = "account")
+@Table(name = "chapter")
 @Where(clause = "deleted=0")
 @Getter
 @Setter
 @NoArgsConstructor
-public class AccountEntity extends CoreEntity {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+public class ChapterEntity extends CoreEntity {
+  @Id
+  @GeneratedValue(strategy = GenerationType.IDENTITY)
+  private Long id;
 
-    private String username;
+  private Long courseId;
 
-    private String password;
+  private Long name;
 
-    private String fullName;
+  // minute
+  private Integer duration;
 
-    private String email;
+  private String fileUrl;
 
-    private String avatar;
-
-    /**
-     * 1: tutor
-     * 2: user
-     */
-    private Short role;
 }
