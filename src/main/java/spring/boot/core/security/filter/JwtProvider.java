@@ -116,7 +116,6 @@ public class JwtProvider {
         Claims claims = parseToken(token);
 
         Long id = Long.valueOf(claims.get("userId").toString());
-        Long deviceInfoId = Long.valueOf(claims.get("deviceInfoId").toString());
         String username = (String) claims.get("username");
 
         String arrayAuthorize = claims.get("authorities").toString();
@@ -132,7 +131,6 @@ public class JwtProvider {
         userDetails.setId(id);
         userDetails.setUsername(username);
         userDetails.setAuthorities(authorities);
-        userDetails.setDeviceInfoId(deviceInfoId);
         return userDetails;
     }
 

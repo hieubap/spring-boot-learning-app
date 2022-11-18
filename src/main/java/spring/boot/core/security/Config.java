@@ -60,7 +60,7 @@ public class Config extends WebSecurityConfigurerAdapter {
 
     @Override
     public void configure(WebSecurity web) throws Exception {
-        web.ignoring().antMatchers("/users/login", "/users/register");
+        web.ignoring().antMatchers("/account/login", "/account/register");
     }
 
 }
