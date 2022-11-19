@@ -1,5 +1,7 @@
 package spring.boot.learning.app.dto;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonProperty.Access;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -23,4 +25,12 @@ public class CourseDTO extends CoreDTO {
   private Double price;
 
   private String imageUrl;
+
+  private Short type;
+
+  @JsonProperty(access = Access.READ_ONLY)
+  private Long numberStudent;
+
+  @JsonProperty(access = Access.READ_ONLY)
+  private Long numberComment;
 }

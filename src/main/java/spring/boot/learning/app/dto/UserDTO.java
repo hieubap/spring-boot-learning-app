@@ -4,21 +4,21 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-import spring.boot.core.api.CoreDTO;
 
 @Getter
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-public class ChapterDTO extends CoreDTO {
+public class UserDTO {
   private Long id;
 
-  private Long courseId;
+  private String email;
 
-  private String name;
+  private String fullName;
 
-  // minute
-  private Integer duration;
+  private String avatar;
 
-  private String fileUrl;
+  private String phone;
+
+  private String description;
 }

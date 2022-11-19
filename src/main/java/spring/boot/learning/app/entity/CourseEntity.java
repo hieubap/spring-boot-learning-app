@@ -33,4 +33,5 @@ public class CourseEntity extends CoreEntity {
 
   private String imageUrl;
 
+  private Short type;
 }

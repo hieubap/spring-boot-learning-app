@@ -5,6 +5,7 @@ import org.springframework.web.multipart.MultipartFile;
 import spring.boot.core.api.CoreService;
 import spring.boot.learning.app.dto.AccountDTO;
 import spring.boot.learning.app.dto.LoginDTO;
+import spring.boot.learning.app.dto.UserDTO;
 import spring.boot.learning.app.entity.AccountEntity;
 
 public interface AccountService extends CoreService<AccountDTO, AccountEntity> {
@@ -19,4 +20,6 @@ public interface AccountService extends CoreService<AccountDTO, AccountEntity> {
     Long getCurrentUserId();
 
     AccountDTO changeAvatar(MultipartFile file);
+
+    UserDTO getUserDTO(Long userId);
 }

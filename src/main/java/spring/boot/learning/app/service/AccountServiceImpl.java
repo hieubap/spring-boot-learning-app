@@ -20,6 +20,7 @@ import spring.boot.core.utils.DigestUtil;
 import spring.boot.file.service.FileService;
 import spring.boot.learning.app.dto.AccountDTO;
 import spring.boot.learning.app.dto.LoginDTO;
+import spring.boot.learning.app.dto.UserDTO;
 import spring.boot.learning.app.entity.AccountEntity;
 import spring.boot.learning.app.repository.AccountRepository;
 
@@ -75,6 +76,7 @@ public class AccountServiceImpl
                 .username(userEntity.getUsername())
                 .fullName(userEntity.getFullName())
                 .email(userEntity.getEmail())
+                .description(userEntity.getDescription())
                 .role(roles.get(0))
                 .avatar(userEntity.getAvatar())
                 .privileges(roles)
@@ -141,5 +143,20 @@ public class AccountServiceImpl
         }
 
         return DigestUtil.sha256Hex(password).equals(userEntity.getPassword());
+    }
+
+    @Override
+    public UserDTO getUserDTO(Long userId) {
+        AccountEntity accountEntity = accountRepository
+            .findById(userId)
+            .orElse(new AccountEntity());
+        return new UserDTO(
+            accountEntity.getId(),
+            accountEntity.getEmail(),
+            accountEntity.getFullName(),
+            accountEntity.getAvatar(),
+            accountEntity.getPhone(),
+            accountEntity.getDescription()
+            );
     }
 }

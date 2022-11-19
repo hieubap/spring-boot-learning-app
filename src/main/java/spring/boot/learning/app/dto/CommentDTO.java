@@ -18,4 +18,6 @@ public class CommentDTO extends CoreDTO {
   private Long userId;
 
   private String content;
+
+  private UserDTO user;
 }

@@ -10,15 +10,10 @@ import spring.boot.core.api.CoreDTO;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-public class ChapterDTO extends CoreDTO {
+public class RegisterDTO extends CoreDTO {
   private Long id;
 
+  private Long studentId;
+
   private Long courseId;
-
-  private String name;
-
-  // minute
-  private Integer duration;
-
-  private String fileUrl;
 }

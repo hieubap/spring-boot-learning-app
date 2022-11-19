@@ -44,6 +44,7 @@ public class JwtProvider {
         String username = jwtTokenProperties.getUsername();
         String fullName = jwtTokenProperties.getFullName();
         String email = jwtTokenProperties.getEmail();
+        String description = jwtTokenProperties.getDescription();
         List<String> privileges = jwtTokenProperties.getPrivileges();
         Map<String, Object> jwtAdditionalInformation = jwtTokenProperties.getJwtAdditionalInformation();
         Map<String, Object> additionalInformation = jwtTokenProperties.getAdditionalInformation();
@@ -104,6 +105,7 @@ public class JwtProvider {
         additionalInformation.put("token", jwt);
         additionalInformation.put("email", email);
         additionalInformation.put("username", username);
+        additionalInformation.put("description", description);
         additionalInformation.put("avatar", jwtTokenProperties.getAvatar());
         additionalInformation.put("full_name", fullName);
         additionalInformation.put("authorities", privileges);
@@ -166,6 +168,8 @@ public class JwtProvider {
         private final String avatar;
 
         private final String email;
+
+        private final String description;
 
         private final List<String> privileges;
 

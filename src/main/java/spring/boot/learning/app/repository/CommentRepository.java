@@ -18,4 +18,5 @@ public interface CommentRepository extends CoreRepository<CommentDTO, CommentEnt
   )
   Page<CommentEntity> search(CommentDTO dto, Pageable pageable);
 
+  Long countByCourseId(Long courseId);
 }

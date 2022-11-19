@@ -12,7 +12,7 @@ import org.hibernate.annotations.Where;
 import spring.boot.core.api.CoreEntity;
 
 @Entity
-@Table(name = "chapter")
+@Table(name = "comment")
 @Where(clause = "deleted=0")
 @Getter
 @Setter
