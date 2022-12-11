@@ -107,6 +107,11 @@ public class CoreServiceImpl<DTO extends CoreDTO, Entity extends CoreEntity>
         Entity model = getById(id);
 
         map = mergeMap(map, MapperUtils.convertValue(mapToDTO(model)));
+//        map.put("createdAt",((String)map.get("createdAt")).replace(' ','T'));
+//        map.put("updatedAt",((String)map.get("updatedAt")).replace(' ','T'));
+        map.remove("createdAt");
+        map.remove("updatedAt");
+
         DTO dto = MapperUtils.convertValue(map, getDtoClass());
 
         dto.setId(id);

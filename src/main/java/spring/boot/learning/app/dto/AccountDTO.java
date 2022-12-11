@@ -26,4 +26,16 @@ public class AccountDTO extends CoreDTO {
     private String phone;
 
     private Short role;
+
+    private String description;
+
+    private String aboutMe;
+
+    private String twitter;
+
+    private String linkedIn;
+
+    private String facebook;
+
+    private String github;
 }

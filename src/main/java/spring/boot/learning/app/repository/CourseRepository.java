@@ -14,7 +14,9 @@ public interface CourseRepository extends CoreRepository<CourseDTO, CourseEntity
   @Override
   @Query("select e from CourseEntity e" +
       " where (lower(e.name) like %:#{#dto.name}% or :#{#dto.name} is null) " +
-      " and (e.type = :#{#dto.type} or :#{#dto.type} is null) "
+      " and (e.type = :#{#dto.type} or :#{#dto.type} is null) " +
+      " and (e.categoryId = :#{#dto.categoryId} or :#{#dto.categoryId} is null) " +
+      " and (e.level = :#{#dto.level} or :#{#dto.level} is null) "
   )
   Page<CourseEntity> search(CourseDTO dto, Pageable pageable);
 }

@@ -28,6 +28,10 @@ public class CourseDTO extends CoreDTO {
 
   private Short type;
 
+  private Short level;
+
+  private Integer categoryId;
+
   @JsonProperty(access = Access.READ_ONLY)
   private Long numberStudent;
 

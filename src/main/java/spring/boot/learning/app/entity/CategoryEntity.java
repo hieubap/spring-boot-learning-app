@@ -12,30 +12,20 @@ import org.hibernate.annotations.Where;
 import spring.boot.core.api.CoreEntity;
 
 @Entity
-@Table(name = "course")
+@Table(name = "category")
 @Where(clause = "deleted=0")
 @Getter
 @Setter
 @NoArgsConstructor
-public class CourseEntity extends CoreEntity {
+public class CategoryEntity extends CoreEntity {
+
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
   private Long id;
 
   private String name;
 
-  private String author;
-
-  // minute
-  private Integer duration;
-
-  private Double price;
-
   private String imageUrl;
 
-  private Short type;
-
-  private Short level;
-
-  private Integer categoryId;
+  private String color;
 }

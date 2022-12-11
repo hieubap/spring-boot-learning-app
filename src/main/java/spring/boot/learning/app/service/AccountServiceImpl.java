@@ -40,11 +40,11 @@ public class AccountServiceImpl
     public AccountEntity mapToEntity(AccountDTO dto) {
         AccountEntity entity = super.mapToEntity(dto);
         if (dto.getId() != null) {
-            dto.setUsername(entity.getUsername());
-            dto.setPassword(entity.getPassword());
-            if (dto.getRole() == null) {
-                dto.setRole(entity.getRole());
-            }
+            AccountEntity accountEntity = accountRepository.findById(dto.getId()).orElse(null);
+
+            entity.setUsername(accountEntity.getUsername());
+            entity.setPassword(accountEntity.getPassword());
+            entity.setRole(accountEntity.getRole());
         }
         return entity;
     }
@@ -156,7 +156,12 @@ public class AccountServiceImpl
             accountEntity.getFullName(),
             accountEntity.getAvatar(),
             accountEntity.getPhone(),
-            accountEntity.getDescription()
+            accountEntity.getDescription(),
+            accountEntity.getAboutMe(),
+            accountEntity.getTwitter(),
+            accountEntity.getLinkedIn(),
+            accountEntity.getFacebook(),
+            accountEntity.getGithub()
             );
     }
 }

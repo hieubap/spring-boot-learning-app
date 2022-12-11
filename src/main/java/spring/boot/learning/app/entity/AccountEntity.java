@@ -36,9 +36,19 @@ public class AccountEntity extends CoreEntity {
 
     private String description;
 
+    private String aboutMe;
+
     /**
      * 1: tutor
      * 2: user
      */
     private Short role;
+
+    private String twitter;
+
+    private String linkedIn;
+
+    private String facebook;
+
+    private String github;
 }

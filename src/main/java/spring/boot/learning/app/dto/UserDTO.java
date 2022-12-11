@@ -21,4 +21,15 @@ public class UserDTO {
   private String phone;
 
   private String description;
+
+  private String aboutMe;
+
+  private String twitter;
+
+  private String linkedIn;
+
+  private String facebook;
+
+  private String github;
+
 }
