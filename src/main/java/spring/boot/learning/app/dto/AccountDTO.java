@@ -38,4 +38,10 @@ public class AccountDTO extends CoreDTO {
     private String facebook;
 
     private String github;
+
+    private String stk;
+
+    private String nganHang;
+
+    private String chuTaiKhoan;
 }

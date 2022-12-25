@@ -32,4 +32,9 @@ public class UserDTO {
 
   private String github;
 
+  private String stk;
+
+  private String nganHang;
+
+  private String chuTaiKhoan;
 }

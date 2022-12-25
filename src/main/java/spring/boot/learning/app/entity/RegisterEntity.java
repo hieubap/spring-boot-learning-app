@@ -25,4 +25,8 @@ public class RegisterEntity extends CoreEntity {
   private Long studentId;
 
   private Long courseId;
+
+  private String imgUrl;
+
+  private Boolean approve;
 }

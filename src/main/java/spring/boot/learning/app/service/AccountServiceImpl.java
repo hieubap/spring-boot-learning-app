@@ -161,7 +161,10 @@ public class AccountServiceImpl
             accountEntity.getTwitter(),
             accountEntity.getLinkedIn(),
             accountEntity.getFacebook(),
-            accountEntity.getGithub()
+            accountEntity.getGithub(),
+            accountEntity.getStk(),
+            accountEntity.getNganHang(),
+            accountEntity.getChuTaiKhoan()
             );
     }
 }

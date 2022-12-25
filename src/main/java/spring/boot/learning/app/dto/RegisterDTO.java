@@ -16,4 +16,8 @@ public class RegisterDTO extends CoreDTO {
   private Long studentId;
 
   private Long courseId;
+
+  private String imgUrl;
+
+  private Boolean approve;
 }

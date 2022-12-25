@@ -19,6 +19,12 @@ public class CourseDTO extends CoreDTO {
 
   private String author;
 
+  private String stk;
+
+  private String nganHang;
+
+  private String chuTaiKhoan;
+
   // minute
   private Integer duration;
 

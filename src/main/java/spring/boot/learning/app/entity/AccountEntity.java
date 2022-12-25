@@ -51,4 +51,10 @@ public class AccountEntity extends CoreEntity {
     private String facebook;
 
     private String github;
+
+    private String stk;
+
+    private String nganHang;
+
+    private String chuTaiKhoan;
 }

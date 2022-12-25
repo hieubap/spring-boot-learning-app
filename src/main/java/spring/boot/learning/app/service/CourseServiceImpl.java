@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import spring.boot.core.api.CoreServiceImpl;
 import spring.boot.learning.app.dto.CourseDTO;
+import spring.boot.learning.app.entity.AccountEntity;
 import spring.boot.learning.app.entity.CourseEntity;
 
 @Service
@@ -14,6 +15,8 @@ public class CourseServiceImpl
 
   @Autowired
   private CommentService commentService;
+  @Autowired
+  private AccountService accountService;
 
   @Override
   public CourseDTO mapToDTO(CourseEntity entity) {
@@ -24,6 +27,13 @@ public class CourseServiceImpl
     courseDTO.setNumberComment(
         commentService.countByCourseId(entity.getId())
     );
+    AccountEntity accountEntity = accountService.getById(courseDTO.getCreatedBy());
+    if(accountEntity != null){
+      courseDTO.setAuthor(accountEntity.getFullName());
+      courseDTO.setStk(accountEntity.getStk());
+      courseDTO.setNganHang(accountEntity.getNganHang());
+      courseDTO.setChuTaiKhoan(accountEntity.getChuTaiKhoan());
+    }
     return courseDTO;
   }
 }
