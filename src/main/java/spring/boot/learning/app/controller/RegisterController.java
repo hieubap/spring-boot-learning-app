@@ -1,5 +1,6 @@
 package spring.boot.learning.app.controller;
 
+import java.util.Map;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -25,6 +26,7 @@ public class RegisterController extends CoreController<RegisterDTO, RegisterEnti
 
   @GetMapping("/check-register/{id}")
   public ResponseDTO getDetail(@PathVariable("id") Long id) {
+
     return response(registerService.checkRegister(id));
   }
 }

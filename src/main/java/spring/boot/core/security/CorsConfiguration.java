@@ -16,7 +16,13 @@ public class CorsConfiguration {
             public void addCorsMappings(CorsRegistry registry) {
                 registry.addMapping("/**")
                         .allowedMethods("HEAD", "GET", "PUT", "POST", "DELETE", "PATCH")
-                        .allowedOrigins("https://graduation-project-8x6a61xek-cudnart99.vercel.app","http://localhost:3000","http://localhost:3001", "http://45.13.132.247:3000", "http://45.13.132.247:1234");
+                        .allowedOrigins(
+                            "https://graduation-project-8x6a61xek-cudnart99.vercel.app",
+                            "https://react-js-learning-web-studemy.vercel.app",
+                            "http://localhost:3000",
+                            "http://localhost:3001",
+                            "http://45.13.132.247:3000",
+                            "http://45.13.132.247:1234");
 
             }
         };

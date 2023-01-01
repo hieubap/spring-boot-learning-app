@@ -4,11 +4,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import spring.boot.core.api.CoreServiceImpl;
 import spring.boot.learning.app.dto.CourseDTO;
-<<<<<<< Updated upstream
 import spring.boot.learning.app.entity.AccountEntity;
-=======
 import spring.boot.learning.app.entity.CategoryEntity;
->>>>>>> Stashed changes
 import spring.boot.learning.app.entity.CourseEntity;
 
 @Service
@@ -34,7 +31,6 @@ public class CourseServiceImpl
     courseDTO.setNumberComment(
         commentService.countByCourseId(entity.getId())
     );
-<<<<<<< Updated upstream
     AccountEntity accountEntity = accountService.getById(courseDTO.getCreatedBy());
     if(accountEntity != null){
       courseDTO.setAuthor(accountEntity.getFullName());
@@ -42,7 +38,6 @@ public class CourseServiceImpl
       courseDTO.setNganHang(accountEntity.getNganHang());
       courseDTO.setChuTaiKhoan(accountEntity.getChuTaiKhoan());
     }
-=======
     if(entity.getCategoryId() != null){
       CategoryEntity categoryEntity = categoryService.getById(entity.getCategoryId());
       courseDTO.setCategoryName(categoryEntity.getName());
@@ -56,8 +51,6 @@ public class CourseServiceImpl
         courseDTO.setLevelName("Advanced");
       }
     }
-
->>>>>>> Stashed changes
     return courseDTO;
   }
 }

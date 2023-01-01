@@ -16,11 +16,14 @@ public interface RegisterRepository extends CoreRepository<RegisterDTO, Register
   @Override
   @Query("select e from RegisterEntity e" +
       " where (e.courseId = :#{#dto.courseId} or :#{#dto.courseId} is null) " +
+      " and (e.authorId = :#{#dto.authorId} or :#{#dto.authorId} is null) " +
       " and (e.studentId = :#{#dto.studentId} or :#{#dto.studentId} is null) "
   )
   Page<RegisterEntity> search(RegisterDTO dto, Pageable pageable);
 
   boolean existsByCourseIdAndStudentId(Long courseId, Long studentId);
+
+  RegisterEntity findByCourseIdAndStudentId(Long courseId, Long studentId);
 
   Long countByCourseId(Long courseId);
 }

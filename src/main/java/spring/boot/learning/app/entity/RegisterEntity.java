@@ -29,4 +29,6 @@ public class RegisterEntity extends CoreEntity {
   private String imgUrl;
 
   private Boolean approve;
+
+  private Long authorId;
 }
