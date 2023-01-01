@@ -37,5 +37,5 @@ public class CourseEntity extends CoreEntity {
 
   private Short level;
 
-  private Integer categoryId;
+  private Long categoryId;
 }

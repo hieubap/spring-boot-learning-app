@@ -39,6 +39,12 @@ public class CourseDTO extends CoreDTO {
   private Integer categoryId;
 
   @JsonProperty(access = Access.READ_ONLY)
+  private String categoryName;
+
+  @JsonProperty(access = Access.READ_ONLY)
+  private String levelName;
+
+  @JsonProperty(access = Access.READ_ONLY)
   private Long numberStudent;
 
   @JsonProperty(access = Access.READ_ONLY)

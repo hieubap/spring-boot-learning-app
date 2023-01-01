@@ -4,7 +4,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import spring.boot.core.api.CoreServiceImpl;
 import spring.boot.learning.app.dto.CourseDTO;
+<<<<<<< Updated upstream
 import spring.boot.learning.app.entity.AccountEntity;
+=======
+import spring.boot.learning.app.entity.CategoryEntity;
+>>>>>>> Stashed changes
 import spring.boot.learning.app.entity.CourseEntity;
 
 @Service
@@ -18,6 +22,9 @@ public class CourseServiceImpl
   @Autowired
   private AccountService accountService;
 
+  @Autowired
+  private CategoryService categoryService;
+
   @Override
   public CourseDTO mapToDTO(CourseEntity entity) {
     CourseDTO courseDTO = super.mapToDTO(entity);
@@ -27,6 +34,7 @@ public class CourseServiceImpl
     courseDTO.setNumberComment(
         commentService.countByCourseId(entity.getId())
     );
+<<<<<<< Updated upstream
     AccountEntity accountEntity = accountService.getById(courseDTO.getCreatedBy());
     if(accountEntity != null){
       courseDTO.setAuthor(accountEntity.getFullName());
@@ -34,6 +42,22 @@ public class CourseServiceImpl
       courseDTO.setNganHang(accountEntity.getNganHang());
       courseDTO.setChuTaiKhoan(accountEntity.getChuTaiKhoan());
     }
+=======
+    if(entity.getCategoryId() != null){
+      CategoryEntity categoryEntity = categoryService.getById(entity.getCategoryId());
+      courseDTO.setCategoryName(categoryEntity.getName());
+    }
+    if(entity.getLevel() != null){
+      if(entity.getLevel()==1){
+        courseDTO.setLevelName("Beginner");
+      }else if(entity.getLevel()==2){
+        courseDTO.setLevelName("Intermediate");
+      }else if(entity.getLevel()==3){
+        courseDTO.setLevelName("Advanced");
+      }
+    }
+
+>>>>>>> Stashed changes
     return courseDTO;
   }
 }

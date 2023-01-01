@@ -47,6 +47,14 @@ public class CoreController<
                                       Pageable pageable) {
         return response(getService().search(dto, pageable));
     }
+    @PatchMapping("/search")
+    public ResponseDTO search2(DTO dto,
+                              @PageableDefault(size = 200,
+                                      sort = "id",
+                                      direction = Sort.Direction.DESC)
+                              Pageable pageable) {
+        return response(getService().search(dto, pageable));
+    }
 
     @PostMapping
     public ResponseDTO create(@Valid @RequestBody DTO dto) {

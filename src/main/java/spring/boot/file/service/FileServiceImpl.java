@@ -8,6 +8,7 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import javax.servlet.http.HttpServletRequest;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.core.io.Resource;
 import org.springframework.core.io.UrlResource;
 import org.springframework.http.HttpHeaders;
@@ -23,7 +24,10 @@ import spring.boot.core.storage.StorageService;
 @Service
 public class FileServiceImpl implements FileService {
 
-    private final Path imageLocation = Paths.get("uploads");
+    @Value("${app.storage.location:./files/public}")
+    private String filesPath;
+
+    private final Path imageLocation = Paths.get("files");
     private final String DOCUMENT = "documents";
 
     @Autowired
@@ -34,7 +38,7 @@ public class FileServiceImpl implements FileService {
                                            HttpServletRequest httpServletRequest) throws IOException {
         Resource resource = loadFileAsResource(fileName);
         final HttpHeaders headers = new HttpHeaders();
-        headers.setContentType(MediaType.IMAGE_PNG);
+//        headers.setContentType(MediaType.IMAGE_PNG);
 
         return new ResponseEntity<>(ByteStreams.toByteArray(resource.getInputStream()), headers,
                 HttpStatus.OK);
