@@ -96,7 +96,8 @@ public class AccountServiceImpl
         }
         AccountEntity accountEntity = mapToEntity(accountDTO);
 
-        accountEntity.setRole((short) 1);
+        if(accountEntity.getRole() == null)
+            accountEntity.setRole((short) 1);
         accountEntity.setPassword(DigestUtil.sha256Hex(accountDTO.getPassword()));
         save(accountEntity, accountDTO);
 

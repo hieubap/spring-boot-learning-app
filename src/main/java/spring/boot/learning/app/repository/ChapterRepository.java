@@ -14,6 +14,7 @@ public interface ChapterRepository extends CoreRepository<ChapterDTO, ChapterEnt
   @Override
   @Query("select e from ChapterEntity e" +
       " where (lower(e.name) like %:#{#dto.name}% or :#{#dto.name} is null) " +
+      " and (e.createdBy = :#{#dto.createdBy} or :#{#dto.createdBy} is null) " +
       " and (e.courseId = :#{#dto.courseId} or :#{#dto.courseId} is null) "
   )
   Page<ChapterEntity> search(ChapterDTO dto, Pageable pageable);

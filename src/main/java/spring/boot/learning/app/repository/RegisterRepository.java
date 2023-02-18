@@ -14,9 +14,11 @@ import spring.boot.learning.app.entity.RegisterEntity;
 public interface RegisterRepository extends CoreRepository<RegisterDTO, RegisterEntity> {
 
   @Override
-  @Query("select e from RegisterEntity e" +
+  @Query("select e from RegisterEntity e"
+      + " join e.student s" +
       " where (e.courseId = :#{#dto.courseId} or :#{#dto.courseId} is null) " +
       " and (e.authorId = :#{#dto.authorId} or :#{#dto.authorId} is null) " +
+      " and (lower(s.fullName) like %:#{#dto.studentName}% or :#{#dto.studentName} is null) " +
       " and (e.studentId = :#{#dto.studentId} or :#{#dto.studentId} is null) "
   )
   Page<RegisterEntity> search(RegisterDTO dto, Pageable pageable);
